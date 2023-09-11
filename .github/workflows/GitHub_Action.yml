@@ -27,6 +27,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      
+      #set up node.js version
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
 
       # sets up Python.
       - name: Set up Python ${{ matrix.python-version }} # Name of an action that sets up Python.
