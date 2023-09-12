@@ -12,6 +12,7 @@ import uvicorn
 from fastapi import FastAPI
 import pandas as pd
 import joblib
+from pydantic import BaseModel #, PydanticUserError
 
 # importing custom made modules
 from ML.schema import ModelInput
@@ -33,41 +34,40 @@ async def get_items():
 
 # making inference with fastAPI POST
 
-try:
+@app.post("/inference")
+#try:
+async def inference(input_data: ModelInput):
 
-    @app.post("/inference")
-    async def inference(input_data: ModelInput):
+    input_data = input_data.dict()
+    change_keys = config['infer']['update_keys']
+    columns = config['infer']['columns']
+    cat_features = config['data']['cat_features']
 
-        input_data = input_data.dict()
-        change_keys = config['infer']['update_keys']
-        columns = config['infer']['columns']
-        cat_features = config['data']['cat_features']
+    for new_key, old_key in change_keys:
+        input_data[new_key] = input_data.pop(old_key)
 
-        for new_key, old_key in change_keys:
-            input_data[new_key] = input_data.pop(old_key)
+    input_df = pd.DataFrame(
+        data=input_data.values(),
+        index=input_data.keys()).T
+    input_df = input_df[columns]
+    print(input_df)
 
-        input_df = pd.DataFrame(
-            data=input_data.values(),
-            index=input_data.keys()).T
-        input_df = input_df[columns]
-        print(input_df)
+    model = joblib.load("model/classifier_model.joblib")
+    encoder = joblib.load("model/encoder_train.joblib")
+    lb = joblib.load("model/lb_train.joblib")
 
-        model = joblib.load("model/classifier_model.joblib")
-        encoder = joblib.load("model/encoder_train.joblib")
-        lb = joblib.load("model/lb_train.joblib")
+    X, _, _, _ = process_data(
+        input_df,
+        categorical_features=cat_features,
+        encoder=encoder, lb=lb, training=False)
 
-        X, _, _, _ = process_data(
-            input_df,
-            categorical_features=cat_features,
-            encoder=encoder, lb=lb, training=False)
+    pred = model.predict(X)
+    prediction = lb.inverse_transform(pred)[0]
 
-        pred = model.predict(X)
-        prediction = lb.inverse_transform(pred)[0]
+    return {"prediction": prediction}
 
-        return {"prediction": prediction}
-
-except PydanticUserError as exc_info:
-    assert exc_info.code == 'model-field-overridden'
+#except PydanticUserError as exc_info:
+#    assert exc_info.code == 'model-field-overridden'
 
 if __name__ == "__main__":
     # uvicorn main:app --reload

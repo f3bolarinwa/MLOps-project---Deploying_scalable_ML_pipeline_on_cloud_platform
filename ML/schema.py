@@ -6,7 +6,7 @@ Data: July 2023
 """
 
 #importing needed python library
-from pydantic import BaseModel
+from pydantic import BaseModel #, PydanticUserError
 from typing_extensions import Literal
 
 
