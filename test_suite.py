@@ -164,7 +164,7 @@ def test_api_get():
 
     r = client.get("/")
     assert r.status_code == 200
-    assert r.json() == {"greeting": "Welcome!"}
+    assert r.json() == 'Welcome! Please use the POST method to run ML inference on the API. Thank you!' # {"greeting": "Welcome!"}
 
 
 def test_api_post():

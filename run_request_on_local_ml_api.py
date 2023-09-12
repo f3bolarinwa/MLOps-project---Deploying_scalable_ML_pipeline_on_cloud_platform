@@ -16,9 +16,9 @@ data = {
     'occupation': 'Exec-managerial',
     'relationship': 'Husband',
     'race': 'White',
-            'sex': 'Male',
-            'hoursPerWeek': 45,
-            'nativeCountry': 'United-States'
+    'sex': 'Male',
+    'hoursPerWeek': 45,
+    'nativeCountry': 'United-States'
 }
 
 r = requests.post('http://127.0.0.1:8000/inference', json=data)

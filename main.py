@@ -6,13 +6,12 @@ Data: July 2023
 """
 
 # importing needed python libraries
-import os
 import yaml
 import uvicorn
 from fastapi import FastAPI
 import pandas as pd
 import joblib
-from pydantic import BaseModel #, PydanticUserError
+from pydantic import BaseModel
 
 # importing custom made modules
 from ML.schema import ModelInput
@@ -26,17 +25,13 @@ with open('config.yaml') as f:
 app = FastAPI()
 
 # setting welcome message with fastAPI GET
-
-
 @app.get("/")
-async def get_items():
-    return {"greeting": "Welcome!"}
+async def welcome_message():
+    return "Welcome! Please use the POST method to run ML inference on the API. Thank you!"
 
-# making inference with fastAPI POST
-
+# making ML inference with fastAPI POST
 @app.post("/inference")
-#try:
-async def inference(input_data: ModelInput):
+async def run_inference(input_data: ModelInput):
 
     input_data = input_data.dict()
     change_keys = config['infer']['update_keys']
@@ -66,8 +61,6 @@ async def inference(input_data: ModelInput):
 
     return {"prediction": prediction}
 
-#except PydanticUserError as exc_info:
-#    assert exc_info.code == 'model-field-overridden'
 
 if __name__ == "__main__":
     # uvicorn main:app --reload

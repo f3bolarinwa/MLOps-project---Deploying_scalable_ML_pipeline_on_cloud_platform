@@ -57,7 +57,6 @@ print('precision on test set = {}'.format(precision))
 print('recall on test set = {}'.format(recall))
 print('fbeta on test set = {}'.format(fbeta))
 
-
 # Model performance on slices of test data
 model = classifier
 metrics = slice_data(test, model, cat_features, encoder_train, lb_train)
