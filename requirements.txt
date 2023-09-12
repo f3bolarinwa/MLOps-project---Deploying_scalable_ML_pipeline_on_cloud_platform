@@ -1,45 +1,13 @@
-astroid==2.15.6
-autopep8==2.0.4
-Brotli @ file:///Users/runner/miniforge3/conda-bld/brotli-split_1693583518054/work
-certifi==2023.7.22
-charset-normalizer @ file:///home/conda/feedstock_root/build_artifacts/charset-normalizer_1688813409104/work
-click @ file:///home/conda/feedstock_root/build_artifacts/click_1692311806742/work
-colorama @ file:///home/conda/feedstock_root/build_artifacts/colorama_1666700638685/work
-dill==0.3.7
-exceptiongroup @ file:///home/conda/feedstock_root/build_artifacts/exceptiongroup_1692026125334/work
-fastapi @ file:///home/conda/feedstock_root/build_artifacts/fastapi_1610101993319/work
-gunicorn @ file:///Users/runner/miniforge3/conda-bld/gunicorn_1689781918234/work
-h11 @ file:///home/conda/feedstock_root/build_artifacts/h11_1664132893548/work
-idna @ file:///home/conda/feedstock_root/build_artifacts/idna_1663625384323/work
-iniconfig @ file:///home/conda/feedstock_root/build_artifacts/iniconfig_1673103042956/work
-isort==5.12.0
-joblib @ file:///home/conda/feedstock_root/build_artifacts/joblib_1691577114857/work
-lazy-object-proxy==1.9.0
-mccabe==0.7.0
-numpy @ file:///Users/runner/miniforge3/conda-bld/numpy_1687808433287/work
-packaging @ file:///home/conda/feedstock_root/build_artifacts/packaging_1681337016113/work
-pandas @ file:///Users/runner/miniforge3/conda-bld/pandas_1688740593370/work
-platformdirs @ file:///home/conda/feedstock_root/build_artifacts/platformdirs_1690813113769/work
-pluggy @ file:///home/conda/feedstock_root/build_artifacts/pluggy_1693086607691/work
-pooch @ file:///home/conda/feedstock_root/build_artifacts/pooch_1679580333621/work
-pycodestyle==2.11.0
-pydantic @ file:///Users/runner/miniforge3/conda-bld/pydantic_1690476277280/work
-pylint==2.17.5
-PySocks @ file:///home/conda/feedstock_root/build_artifacts/pysocks_1661604839144/work
-pytest @ file:///home/conda/feedstock_root/build_artifacts/pytest_1693674600259/work
-python-dateutil @ file:///home/conda/feedstock_root/build_artifacts/python-dateutil_1626286286081/work
-pytz @ file:///home/conda/feedstock_root/build_artifacts/pytz_1693930252784/work
+fastapi==0.103.1
+joblib==1.3.2
+numpy==1.24.4
+pandas==2.0.3
+pydantic==1.10.12
+pytest==7.4.1
 PyYAML==6.0.1
-requests @ file:///home/conda/feedstock_root/build_artifacts/requests_1684774241324/work
-scikit-learn @ file:///Users/runner/miniforge3/conda-bld/scikit-learn_1688116469994/work
-scipy @ file:///Users/runner/miniforge3/conda-bld/scipy-split_1683900453702/work/base/dist/scipy-1.10.1-cp38-cp38-macosx_11_0_arm64.whl#sha256=06d649e33fd400c8608c1083a7bb6f490989227277eae7f65577d925d87848e8
-six @ file:///home/conda/feedstock_root/build_artifacts/six_1620240208055/work
-starlette @ file:///home/conda/feedstock_root/build_artifacts/starlette_1595508258730/work
-threadpoolctl @ file:///home/conda/feedstock_root/build_artifacts/threadpoolctl_1689261241048/work
-tomli @ file:///home/conda/feedstock_root/build_artifacts/tomli_1644342247877/work
-tomlkit==0.12.1
-typing-extensions @ file:///home/conda/feedstock_root/build_artifacts/typing_extensions_1688315532570/work
-tzdata @ file:///home/conda/feedstock_root/build_artifacts/python-tzdata_1680081134351/work
-urllib3 @ file:///home/conda/feedstock_root/build_artifacts/urllib3_1689789803562/work
-uvicorn @ file:///Users/runner/miniforge3/conda-bld/uvicorn-split_1690810155712/work
-wrapt==1.15.0
+PyYAML==6.0.1
+Requests==2.31.0
+scikit_learn==1.3.0
+setuptools==68.1.2
+typing_extensions==4.7.1
+uvicorn==0.23.2
