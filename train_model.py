@@ -51,11 +51,12 @@ joblib.dump(classifier, './model/classifier_model.joblib')
 
 # make prediction on test test and compute performance metrics
 preds = inference(classifier, X_test)
-precision, recall, fbeta = compute_model_metrics(y_test, preds)
+precision, recall, fbeta, accuracy = compute_model_metrics(y_test, preds)
 
 print('precision on test set = {}'.format(precision))
 print('recall on test set = {}'.format(recall))
 print('fbeta on test set = {}'.format(fbeta))
+print('accuracy on test set = {}'.format(accuracy))
 
 # Model performance on slices of test data
 model = classifier

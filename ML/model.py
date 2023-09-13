@@ -8,8 +8,10 @@ Data: July 2023
 
 
 #importing required python libraries
-from sklearn.metrics import fbeta_score, precision_score, recall_score
+from sklearn.metrics import fbeta_score, precision_score, recall_score, accuracy_score
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.tree import DecisionTreeClassifier
+from xgboost import XGBClassifier
 import joblib
 import pandas as pd
 import numpy as np
@@ -34,7 +36,9 @@ def train_model(X_train, y_train):
         Trained machine learning model.
     """
 
-    classifier = RandomForestClassifier(random_state=2)
+    classifier = XGBClassifier(random_state=42, n_estimators = 120, learning_rate = 0.1, max_depth = 10)
+    #classifier = DecisionTreeClassifier(random_state=42)
+    #classifier = RandomForestTreeClassifier(random_state=42, n_estimators=200)
     classifier.fit(X_train, y_train)
 
     return classifier
@@ -60,8 +64,9 @@ def compute_model_metrics(y, preds):
     fbeta = fbeta_score(y, preds, beta=1, zero_division=1)
     precision = precision_score(y, preds, zero_division=1)
     recall = recall_score(y, preds, zero_division=1)
+    accuracy = accuracy_score(y, preds)#, zero_division=1)
 
-    return precision, recall, fbeta
+    return precision, recall, fbeta, accuracy
 
 
 def inference(model, X):
@@ -122,7 +127,7 @@ def slice_data(df, model, cat_features, encoder, lb):
                 )
 
             preds = inference(model, X)
-            precision, recall, fbeta = compute_model_metrics(y, preds)
+            precision, recall, fbeta, accuracy = compute_model_metrics(y, preds)
             line = "[%s %s] Precision: %s " "Recall: %s FBeta: %s" % (feature, cls, precision, recall, fbeta)
             metrics.append(line)
 

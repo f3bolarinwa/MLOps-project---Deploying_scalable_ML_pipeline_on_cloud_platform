@@ -131,11 +131,12 @@ def test_compute_model_metrics(data_train, train_model_for_test):
     y = y_train
     preds = classifier.predict(X_train)
 
-    precision, recall, fbeta = compute_model_metrics(y, preds)
+    precision, recall, fbeta, accuracy = compute_model_metrics(y, preds)
 
     assert isinstance(fbeta, float)
     assert isinstance(precision, float)
     assert isinstance(recall, float)
+    assert isinstance(accuracy, float)
 
 
 def test_inference(data_train, train_model_for_test):
@@ -186,9 +187,9 @@ def test_api_post():
             'hoursPerWeek': 60,
             'nativeCountry': 'United-States'})
     assert request.status_code == 200
-    assert request.json() == {"prediction": " <=50K"}
+    assert request.json() == {"prediction": "<=50K"}
 
-'''
+
 
 def test_api_post_2():
     """
@@ -197,18 +198,36 @@ def test_api_post_2():
     request = client.post(
         "/inference",
         json={
-            'age': 45,
-            'workclass': 'Private',
-            'fnlgt': 0,
+            'age': 72,
+            'workclass': 'Self-emp-inc',
+            'fnlgt': 473748,
             'education': 'Masters',
             'marital_status': 'Married-civ-spouse',
-            'occupation': 'Prof-specialty',
-            'relationship': 'Not-in-family',
-            'race': 'Other',
-            'sex': 'Female',
-            'hoursPerWeek': 40,
+            'occupation': 'Exec-managerial',
+            'relationship': 'Husband',
+            'race': 'White',
+            'sex': 'Male',
+            'hoursPerWeek': 50,
             'nativeCountry': 'United-States'})
     assert request.status_code == 200
-    assert request.json() == {"prediction": " >50K"}
+    assert request.json() == {"prediction": ">50K"}
+
+
+'''
+
+json={'age': 33,
+                                     'workclass': 'Private',
+                                     'fnlgt': 149184,
+                                     'education': 'HS-grad',
+                                     'marital_status': 'Never-married',
+                                     'occupation': 'Prof-specialty',
+                                     'relationship': 'Not-in-family',
+                                     'race': 'White',
+                                     'sex': 'Male',
+                                     'hoursPerWeek': 60,
+                                     'nativeCountry': 'United-States'
+                                     })
+    assert request.status_code == 200
+    assert request.json() == {"prediction": ">50K"}
 
 '''
