@@ -48,4 +48,4 @@ class ModelInput(BaseModel):
         'Italy', 'China', 'South', 'Japan', 'Yugoslavia', 'Peru',
         'Outlying-US(Guam-USVI-etc)', 'Scotland', 'Trinadad&Tobago',
         'Greece', 'Nicaragua', 'Vietnam', 'Hong', 'Ireland', 'Hungary',
-        'Holand-Netherlands', '?']
+        'Holand-Netherlands']

@@ -212,22 +212,3 @@ def test_api_post_2():
     assert request.status_code == 200
     assert request.json() == {"prediction": ">50K"}
 
-
-'''
-
-json={'age': 33,
-                                     'workclass': 'Private',
-                                     'fnlgt': 149184,
-                                     'education': 'HS-grad',
-                                     'marital_status': 'Never-married',
-                                     'occupation': 'Prof-specialty',
-                                     'relationship': 'Not-in-family',
-                                     'race': 'White',
-                                     'sex': 'Male',
-                                     'hoursPerWeek': 60,
-                                     'nativeCountry': 'United-States'
-                                     })
-    assert request.status_code == 200
-    assert request.json() == {"prediction": ">50K"}
-
-'''
