@@ -44,6 +44,7 @@ Overview of the content in repository:
 2)To isolate runtime environment on local machine, run in terminal:
 
 > conda env create -f environment.yml
+
 > conda activate proj3
 
 3)install required versions of pip packages
