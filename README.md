@@ -57,7 +57,7 @@ https://femis-ml-pipeline-app.onrender.com/docs
 
 5)To activate API locally, run:
 
-> uvicorn main:app --reload
+> python main.py 
 
 6)To test API locally, run:
 
@@ -67,7 +67,7 @@ https://femis-ml-pipeline-app.onrender.com/docs
 
 > python run_request_on_live_ml_api.py
 
-8)Modify test files (run_request_on_local_ml_api.py, run_request_on_live_ml_api.py)to explore further
+8)Modify test files (run_request_on_local_ml_api.py, run_request_on_live_ml_api.py) to explore further
 
 ## API live on Render.com Cloud Platform
 
