@@ -10,5 +10,5 @@ Requests==2.31.0
 scikit_learn==1.0.2
 setuptools==68.0.0 #68.1.2
 typing_extensions==4.7.1 #4.8.0
-uvicorn==0.23.2
+uvicorn==0.22.0 #0.23.2
 xgboost==2.0.0
