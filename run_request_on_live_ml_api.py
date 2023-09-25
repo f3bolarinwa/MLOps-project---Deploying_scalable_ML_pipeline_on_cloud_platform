@@ -22,7 +22,9 @@ data = {
     'nativeCountry': 'United-States'
 }
 
-r = requests.post('https://femis-ml-pipeline-app.onrender.com/run_inference', json=data) #data=json.dumps(data))
+r = requests.post("https://femis-ml-pipeline-app.onrender.com/inference", json=data) #data=json.dumps(data))
+#r = requests.post('https://femis-ml-pipeline-app.onrender.com/docs#/default/run_inference_inference', json=data)
+#r = requests.get('https://femis-ml-pipeline-app.onrender.com')
 
 assert r.status_code == 200
 

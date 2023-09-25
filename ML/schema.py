@@ -49,3 +49,27 @@ class ModelInput(BaseModel):
         'Outlying-US(Guam-USVI-etc)', 'Scotland', 'Trinadad&Tobago',
         'Greece', 'Nicaragua', 'Vietnam', 'Hong', 'Ireland', 'Hungary',
         'Holand-Netherlands']
+
+
+'''
+    model_config = {
+        "json_schema_extra": {
+            "examples": [
+                {
+                'age': 52,
+                'workclass': 'Self-emp-not-inc',
+                'fnlgt': 209642,
+                'education': 'HS-grad',
+                'marital_status': 'Married-civ-spouse',
+                'occupation': 'Exec-managerial',
+                'relationship': 'Husband',
+                'race': 'White',
+                'sex': 'Male',
+                'hoursPerWeek': 45,
+                'nativeCountry': 'United-States'
+                }
+            ]
+        }
+    }
+
+'''
