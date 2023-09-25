@@ -65,4 +65,3 @@ https://femis-ml-pipeline-app.onrender.com/docs
 ## API live on Render.com Cloud Platform
 
 https://femis-ml-pipeline-app.onrender.com/docs
-

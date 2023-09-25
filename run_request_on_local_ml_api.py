@@ -21,12 +21,21 @@ data = {
     'nativeCountry': 'United-States'
 }
 
-r = requests.post('http://127.0.0.1:8000/inference', json=data)
 
+#GET request
+r = requests.get('http://127.0.0.1:8000/')
 assert r.status_code == 200
-
-# print("Response code: %s" % r.status_code)
-# print("Response body: %s" % r.json())
-
 print('Response code = {}'.format(r.status_code))
 print('Response body = {}'.format(r.json()))
+
+
+#POST request
+r = requests.post('http://127.0.0.1:8000/inference', json=data)
+assert r.status_code == 200
+# print("Response code: %s" % r.status_code)
+# print("Response body: %s" % r.json())
+print('Response code = {}'.format(r.status_code))
+print('Response body = {}'.format(r.json()))
+
+
+
