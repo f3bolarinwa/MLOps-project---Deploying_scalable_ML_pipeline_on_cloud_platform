@@ -16,8 +16,8 @@
 [education Prof-school] Precision: 0.8208955223880597 Recall: 0.8870967741935484 FBeta: 0.8527131782945736
 [education Doctorate] Precision: 0.7938144329896907 Recall: 0.8279569892473119 FBeta: 0.8105263157894737
 [education Assoc-voc] Precision: 0.6071428571428571 Recall: 0.42857142857142855 FBeta: 0.5024630541871921
-[education 7th-8th] Precision: 0.0 Recall: 0.0 FBeta: 1.0
-[education 10th] Precision: 0.0 Recall: 0.0 FBeta: 1.0
+[education 7th-8th] Precision: 0.0 Recall: 0.0 FBeta: 0.0
+[education 10th] Precision: 0.0 Recall: 0.0 FBeta: 0.0
 [education 9th] Precision: 1.0 Recall: 0.0 FBeta: 0.0
 [education 5th-6th] Precision: 1.0 Recall: 0.0 FBeta: 0.0
 [education 1st-4th] Precision: 1.0 Recall: 0.0 FBeta: 0.0
@@ -80,7 +80,7 @@
 [native-country Hungary] Precision: 1.0 Recall: 1.0 FBeta: 1.0
 [native-country Cuba] Precision: 1.0 Recall: 0.5 FBeta: 0.6666666666666666
 [native-country India] Precision: 0.6428571428571429 Recall: 0.8181818181818182 FBeta: 0.7200000000000001
-[native-country Ecuador] Precision: 0.0 Recall: 0.0 FBeta: 1.0
+[native-country Ecuador] Precision: 0.0 Recall: 0.0 FBeta: 0.0
 [native-country El-Salvador] Precision: 1.0 Recall: 0.5 FBeta: 0.6666666666666666
 [native-country Outlying-US(Guam-USVI-etc)] Precision: 0.0 Recall: 1.0 FBeta: 0.0
 [native-country France] Precision: 0.3333333333333333 Recall: 0.3333333333333333 FBeta: 0.3333333333333333
@@ -89,7 +89,7 @@
 [native-country Dominican-Republic] Precision: 1.0 Recall: 0.0 FBeta: 0.0
 [native-country Guatemala] Precision: 1.0 Recall: 1.0 FBeta: 1.0
 [native-country Puerto-Rico] Precision: 1.0 Recall: 0.0 FBeta: 0.0
-[native-country Yugoslavia] Precision: 0.0 Recall: 0.0 FBeta: 1.0
+[native-country Yugoslavia] Precision: 0.0 Recall: 0.0 FBeta: 0.0
 [native-country England] Precision: 1.0 Recall: 0.5454545454545454 FBeta: 0.7058823529411764
 [native-country Iran] Precision: 0.6 Recall: 0.6 FBeta: 0.6
 [native-country Peru] Precision: 0.0 Recall: 1.0 FBeta: 0.0
